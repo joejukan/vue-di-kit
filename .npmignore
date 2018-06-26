@@ -1,0 +1,13 @@
+src/
+typings/
+node_modules/
+scripts/
+spec/
+webpack.config.js
+npm-debug.log
+tsconfig.json
+jasmine.json
+.gitignore
+.git/
+.vscode/
+.travis.yml
