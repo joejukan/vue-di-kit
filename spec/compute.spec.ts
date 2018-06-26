@@ -1,4 +1,4 @@
-import {Compute, Computed} from "../lib";
+import {Compute, Computed} from "../src";
 
 let name = "John Doe";
 let age = 39;

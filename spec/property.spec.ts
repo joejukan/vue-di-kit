@@ -1,4 +1,4 @@
-import {Prop, p, Property} from "../lib";
+import {Prop, p, Property} from "../src";
 
 describe(`property tests`, () => {
     it(`p function assigns a string constructor correctly`, ()=>{
