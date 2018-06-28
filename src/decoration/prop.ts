@@ -2,6 +2,7 @@ import { PropOptions } from "vue";
 import { Argumenter } from "@joejukan/argumenter";
 import { Property } from "../classification";
 
+export function Prop();
 export function Prop(type: new () => any);
 export function Prop(options: PropOptions);
 export function Prop(...args) {
