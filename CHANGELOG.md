@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * updated `Component` decorator to ignore properties that start with an underscore ( `_` ).
 * removed local functions `kebab`, `properties` and `singular` in favor of the functions defined in `@joejukan/web-kit`. 
 * changed  `RouterOptions` to `RoutingOptions` and extend `RouteConfig` from the `vue-router` `RouterOptions`.
+* updated unit test for `Property` class.
+* updated `p` function to assign default value.
 
 ## [0.0.3] - 2018-06-27
 * updated `Prop` decorator to make parameter optional.

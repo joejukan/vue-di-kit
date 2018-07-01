@@ -40,7 +40,7 @@ export function p(...args){
 
     let options:PropOptions = argue.object || {};
     options.type = type;
-    if(!/null|undefined/.test(typeof options.default)){
+    if(/null|undefined/.test(typeof options.default)){
         options.default = value;
     }
 
