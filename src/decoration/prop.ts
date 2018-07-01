@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { PropOptions } from "vue";
 import { Argumenter } from "@joejukan/argumenter";
 import { Property } from "../classification";
@@ -10,9 +11,11 @@ export function Prop(...args) {
     let type = argue.function;
     let options: PropOptions = argue.object || <PropOptions>{ type: type };
     return function (target: any, key: string) {
-        let desc = <PropertyDescriptor>{value: target[key]};
-        new Property(options, desc);
-        Object.defineProperty(target, key, desc)
+        if(!/null|undefined/.test(typeof options.default)){
+            options.default = target[key];
+        }
+       let property = new Property(options);
+       Reflect.defineMetadata(key, property, target);
     }
 }
 
@@ -37,8 +40,9 @@ export function p(...args){
 
     let options:PropOptions = argue.object || {};
     options.type = type;
+    if(!/null|undefined/.test(typeof options.default)){
+        options.default = value;
+    }
 
-    let desc = <PropertyDescriptor> {value: value || new type()}
-
-    return new Property(options, desc);
+    return new Property(options);
 }

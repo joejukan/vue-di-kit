@@ -6,18 +6,18 @@ export class Property implements PropOptions{
     public default: any;
     public constructor(type: new () => any);
     public constructor(options: PropOptions);
-    public constructor(options: PropOptions, desc: PropertyDescriptor);
     public constructor(...args){
         let argue = new Argumenter(args);
         this.type = argue.function;
         let options = <PropOptions> argue.object;
-        let desc: PropertyDescriptor = argue.object || {};
 
         Object.assign(this, options);
-        
-        let value = desc.value;
+        this.setValue(this.default);
+    }
 
-        if(value){
+    public setValue(value){
+        if(!/null|undefined/.test(typeof value)){
+            this.default = value;
             if(!this.type){
                 if(typeof value === 'string')
                     this.type = String;
@@ -31,14 +31,5 @@ export class Property implements PropOptions{
                     this.type = value['constructor'];
             }
         }
-
-        
-        this.default = options.default || function() { return value; }
-        desc.configurable = true;
-        desc.enumerable = true;
-        desc.writable = true;
-        delete desc.get
-        delete desc.set
-        desc.value = this;
     }
 }

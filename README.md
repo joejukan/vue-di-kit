@@ -34,7 +34,25 @@ export class ListingComponent {
     }
 }
 ```
+### NOTES:
+**01. Component Property Nomenclature**<br/>
+When defining properties or data fields, ensure that they do not start with a dollar sign ( `$` ) or and underscore ( `_` ).<br/>
+Otherwise, the property or data field will be ignored.<br/><br/>
 
+**02. Setting Prop Default Value**<br/>
+When defining a vue property `@Prop`, the default value would need to be set in the prop decorator.
+```typescript
+@Prop({default: 'Hello World'})
+public title:string
+```
+
+The following scenario with set a title property, but the property will not have a default value.
+```typescript
+@Prop()
+public title:string = 'Hello World';
+```
+
+<br/>
 ## Installation
 Do the following steps to install **vue-di-kit**:
 ```

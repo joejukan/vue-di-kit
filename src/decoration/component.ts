@@ -1,8 +1,9 @@
+import "reflect-metadata";
 import { class_components, components } from "../globalization";
 import { Argumenter } from "@joejukan/argumenter";
 import Vue, { ComponentOptions, VueConstructor } from "vue";
 import { Computed, Property, VueClass } from "../classification";
-import { singular, kebab, properties } from "../function";
+import { singular, kebab, properties } from "@joejukan/web-kit"
 
 export function Component();
 export function Component(options?: ComponentOptions<Vue>);
@@ -37,6 +38,9 @@ function isProp(key: string): boolean{
     if(key.startsWith('$'))
         return false;
 
+    if(key.startsWith('_'))
+        return false;
+
     if(key === 'constructor' || key === '__proto__')
         return false;
     
@@ -66,7 +70,7 @@ function process(options: ComponentOptions<Vue>, type: new() => Vue){
     if(!options.name)
         options.name = kebab(type);
     
-    let vue = Object.create(type.prototype);
+    let vue = new type();
     let keys = properties(vue, true);
     let data = {};
     let props = options.props = {};
@@ -76,9 +80,19 @@ function process(options: ComponentOptions<Vue>, type: new() => Vue){
 
     for(let i = 0; i < keys.length; i++){
         let key = keys[i];
+
         let value = vue[key];
         if(isProp(key)){
-            if(typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'){
+            // TODO: find a more efficient way to get the value.
+            if(Reflect.hasMetadata(key, type.prototype)){
+                let property: Property = Reflect.getMetadata(key, type.prototype);
+                property.setValue(value);
+                options.props[key] = property;
+            }
+            else if(value instanceof Property){
+                options.props[key] = value;
+            }
+            else if(typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'){
                 data[key] = value;
             }
 
@@ -94,10 +108,6 @@ function process(options: ComponentOptions<Vue>, type: new() => Vue){
 
             else if(value instanceof Computed){
                 options.computed[key] = value;
-            }
-
-            else if(value instanceof Property){
-                options.props[key] = value
             }
 
             else if(typeof value === 'object')

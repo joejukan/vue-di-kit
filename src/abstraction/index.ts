@@ -1,1 +1,1 @@
-export * from './router.options';
+export * from './routing.options';

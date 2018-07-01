@@ -1,6 +1,7 @@
 import Vue from "vue";
-export interface RouterOptions {
-    path?: string;
+
+export interface RoutingOptions {
+    path?: string | Array<string>;
     paths?: Array<string>;
     name?: string;
     component?: typeof Vue;
