@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.<br/>
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).<br/><br/>
 
+## [0.0.5] - 2018-10-08
+* update package.json to include [vue-hot-reload-api](https://www.npmjs.com/package/vue-hot-reload-api).
+* added HMRClass as a wrap around the [vue-hot-reload-api](https://www.npmjs.com/package/vue-hot-reload-api).
+
 ## [0.0.4] - 2018-07-01
 * update package.json to include `@joejukan/web-kit`. 
 * added unit testing for `Property` class.
