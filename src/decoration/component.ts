@@ -2,8 +2,11 @@ import "reflect-metadata";
 import { class_components, components } from "../globalization";
 import { Argumenter } from "@joejukan/argumenter";
 import Vue, { ComponentOptions, VueConstructor } from "vue";
-import { Computed, Property, VueClass } from "../classification";
-import { singular, kebab, properties } from "@joejukan/web-kit"
+import { Computed, Property } from "../classification";
+import { singular, kebab, properties } from "@joejukan/web-kit";
+import { getVue } from '../function';
+
+const V = getVue();
 
 export function Component();
 export function Component(options?: ComponentOptions<Vue>);
@@ -27,10 +30,10 @@ export function Component(...args) {
 function findSuper(proto: Object): VueConstructor<Vue> {
     let parent = Object.getPrototypeOf(proto)
 
-    if(parent instanceof Vue)
+    if(parent instanceof V)
         return parent.constructor;
 
-    return Vue;
+    return V;
     
 }
 

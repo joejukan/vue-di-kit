@@ -1,8 +1,9 @@
 import Vue, { VueConstructor } from 'vue';
 import { VueClass } from '.';
+import { getVue } from '../function';
 import * as api from 'vue-hot-reload-api';
 declare let module: { hot: {accept: () => void }};
-
+const V: VueConstructor<Vue> = getVue();
 export class HMRClass {
 
     public constructor(
@@ -33,7 +34,7 @@ export class HMRClass {
 
     public hot() {
         if(module.hot) {
-            this.install(Vue);
+            this.install(V);
             if(this.compatible) {
                 module.hot.accept();
                 if(!this.isRecorded(this.id)) {
