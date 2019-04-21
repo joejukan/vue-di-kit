@@ -30,20 +30,31 @@
   "bugs": {
     "url": "https://github.com/joejukan/vue-di-kit/issues"
   },
-  "homepage": "https://github.com/joejukan/vue-di-kit#readme",
+  "homepage": "https://joejukan.github.io/vue-di-kit",
   "dependencies": {
-    "@joejukan/argumenter": "1.0.3",
-    "@joejukan/web-kit": "0.0.1",
     "window-or-global": "1.0.1",
-    "reflect-metadata": "0.1.12",
-    "vue": "2.5.16",
-    "vue-router": "3.0.1",
-    "vue-hot-reload-api": "2.3.1"
+    "reflect-metadata": "0.1.13"
+  },
+  "peerDependencies": {
+    "@joejukan/argumenter": ">= 1.0.3",
+    "@joejukan/web-kit": ">= 0.0.1",
+    "vue": ">= 2.6.0",
+    "vue-router": ">= 3.0.0",
+    "vue-hot-reload-api": ">= 2.3.0"
   },
   "devDependencies": {
-    "@types/jasmine": "2.8.8",
-    "@types/node": "8.10.30",
+    "@joejukan/argumenter": "1.0.3",
+    "@joejukan/web-kit": "0.0.1",
+    "@types/jasmine": "3.3.12",
+    "@types/node": "11.13.6",
+    "docute": "4.13.6",
+    "jasmine": "3.4.0",
     "jasmine-spec-reporter": "4.2.1",
-    "jasmine-ts": "0.2.1"
+    "jasmine-ts": "0.3.0",
+    "ts-node": "8.1.0",
+    "typescript": "3.4.4",
+    "vue": "2.6.10",
+    "vue-router": "3.0.6",
+    "vue-hot-reload-api": "2.3.3"
   }
 }

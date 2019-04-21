@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.<br/>
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).<br/><br/>
 
+## [0.1.0] - [FEATURE] Upgraded to Vue 2.6 and Documentation on Docute - 2018-04-21
+* upgraded [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) dependency to version `0.1.13`.
+* upgraded [vue](https://www.npmjs.com/package/vue) dependency to version `2.6.10`.
+* upgraded [vue-router](https://www.npmjs.com/package/vue-router) dependency to version `3.0.6`.
+* upgraded [vue-hot-reload-api](https://www.npmjs.com/package/vue-hot-reload-api) dependency to version `2.3.3`.
+* modified `p()` function to extract the `Function` contructor from an assigned function value.
+* modified the `$scopedSlots` field signature to a key pair of `NormalizedScopedSlot` value.
+* added `docs/` folder with [docute](https://www.npmjs.com/package/docute) capability.
+
 ## [0.0.6] - [FEATURE] Introduced Support for Scenarios where the Vue Module is Externalized in Webpack - 2018-11-04
 * update package.json to include [window-or-global](https://www.npmjs.com/package/window-or-global).
 * update package.json to include [@types/node](https://www.npmjs.com/package/@types/node).

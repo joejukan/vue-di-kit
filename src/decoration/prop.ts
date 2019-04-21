@@ -34,6 +34,7 @@ export function p(...args){
             case 'string': type = String; break;
             case 'number': type = Number; break;
             case 'boolean': type = Boolean; break;
+            case 'function': type = Function; break;
             default: type = value['constructor']; break;
         }
     }

@@ -1,6 +1,8 @@
-import Vue, { ComponentOptions, VNode, WatchOptions, CreateElement, VNodeChildrenArrayContents, PropOptions } from "vue";
+import Vue, { ComponentOptions, VNode, WatchOptions, CreateElement, PropOptions } from "vue";
 import { VueRouter } from "vue-router/types/router";
 import { Route } from "vue-router";
+import { NormalizedScopedSlot } from "vue/types/vnode";
+
 export class VueClass<V extends Vue> implements Vue {
     $router: VueRouter;
     $route: Route;
@@ -11,7 +13,7 @@ export class VueClass<V extends Vue> implements Vue {
     $children: Vue[];
     $refs: { [key: string]: Vue | Element | Vue[] | Element[]; };
     $slots: { [key: string]: VNode[]; };
-    $scopedSlots: { [key: string]: (props: any) => string | VNodeChildrenArrayContents; };
+    $scopedSlots: { [key: string]: NormalizedScopedSlot; };
     $isServer: boolean;
     $data: Record<string, any>;
     $props: Record<string, any>;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vue DI Kit</title>
+    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+  </head>
+  <body>
+    <div id="docute"></div>
+    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
+    <script>
+      new Docute({
+        target: '#docute',
+        highlight: ['typescript', 'javascript', 'html', 'css'],
+        sidebar: [
+          {
+            title: 'General',
+            links: [
+              { title: 'Contributors', link: '../general/CONTRIBUTORS.md', toc: true },
+              { title: 'Change Log', link: '../general/CHANGELOG.md', toc: true },
+              { title: 'License', link: '../general/LICENSE.md', toc: true }
+            ]
+          },
+          {
+            title: 'Usage',
+            links: [
+              { title: 'Define a Vue Component', link: '../usage/define-vue-component.md', toc: true },
+              { title: 'Define a Route Entry', link: '../usage/define-route-entry.md', toc: true },
+              { title: 'Define a Component Property', link: '../usage/define-component-property.md', toc: true },
+              { title: 'Define a Compute Property', link: '../usage/define-compute-property.md', toc: true },
+              { title: 'Define Lifecycle Functions', link: '../usage/define-lifecycle-functions.md', toc: true }
+            ]
+          }
+        ]
+      })
+    </script>
+  </body>
+</html>
