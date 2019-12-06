@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.<br/>
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).<br/><br/>
 
+## [0.1.1] - [FIX] Issue #2 by Deep Cloning Data Object to Each Component - 2019-12-06
+* modified the `process()` function of the `@Component` decorator so that the `options.data` is a function that returns a deep clone of the `data` object.
+
 ## [0.1.0] - [FEATURE] Upgraded to Vue 2.6 and Documentation on Docute - 2018-04-21
 * upgraded [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) dependency to version `0.1.13`.
 * upgraded [vue](https://www.npmjs.com/package/vue) dependency to version `2.6.10`.

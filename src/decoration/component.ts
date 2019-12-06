@@ -3,7 +3,7 @@ import { class_components, components } from "../globalization";
 import { Argumenter } from "@joejukan/argumenter";
 import Vue, { ComponentOptions, VueConstructor } from "vue";
 import { Computed, Property } from "../classification";
-import { singular, kebab, properties } from "@joejukan/web-kit";
+import { singular, kebab, properties, clone } from "@joejukan/web-kit";
 import { getVue } from '../function';
 
 const V = getVue();
@@ -122,9 +122,7 @@ function process(options: ComponentOptions<Vue>, type: new() => Vue){
         }
 
         options.data = function() {
-            let result = {};
-            Object.assign(result, data);
-            return result;
+            return clone(data);
         }
     }
 
